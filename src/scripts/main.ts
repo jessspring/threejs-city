@@ -9,8 +9,8 @@ const backgroundColor = new THREE.Color().setHex(0x882266).multiplyScalar(0.2);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.BasicShadowMap;
+// renderer.shadowMap.enabled = true;
+// renderer.shadowMap.type = THREE.BasicShadowMap;
 document.body.appendChild(renderer.domElement);
 
 const scene = createScene();
@@ -119,8 +119,8 @@ function createPavement(x: number, z: number) {
 function createLight(x: number, y: number, z: number, color: THREE.ColorRepresentation, intensity: number, decay: number) {
     const light = new THREE.PointLight(color, intensity, decay);
     light.position.set(x, y, z);
-    light.castShadow = true;
-    light.shadow.mapSize = new THREE.Vector2(4096, 4096);
+    // light.castShadow = true;
+    // light.shadow.mapSize = new THREE.Vector2(1024, 1024);
 
     return light;
 }
