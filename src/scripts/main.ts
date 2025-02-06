@@ -39,18 +39,18 @@ const buildingFunctions = [
     Buildings.createBuilding32,
 ];
 
-const citySize = 10;
+const citySize = 3;
 
-for (let x = -citySize; x < citySize; x++)
-    for (let z = -citySize; z < citySize; z++) {
+for (let x = -citySize; x < citySize + 1; x++)
+    for (let z = -citySize; z < citySize + 1; z++) {
         scene.add(createPavement(x * 24 + 4, z * 24 + 4));
         scene.add(createPlane(x * 24, z * 24));
 
         if (x == 0 && z == 0)
             continue;
 
-        if (randomInt(0, 9) == 0)
-            continue;
+        // if (randomInt(0, 9) == 0)
+        //     continue;
 
         scene.add(buildingFunctions[randomInt(0, buildingFunctions.length - 1)](x * 24 + 4, z * 24 + 4));
     }
